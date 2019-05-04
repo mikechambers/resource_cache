@@ -27,3 +27,17 @@ void main() async {
   print(uri);
 }
 ```
+
+## Installation
+
+Add the following to your pubspec.yaml file:
+
+```yaml
+resource_cache:
+```
+
+and then run
+
+```
+pub get
+```
