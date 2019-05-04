@@ -1,0 +1,12 @@
+name: resource_cache
+version: 0.85.0
+description: >-
+  Dart library that retrieves and maintains a cache of remote URL content, abstracting away the Uri (between remote and local files). It is particularly usefulful for retrieving, caching and display remote images.
+author: Mike Chambers <mikechambers@gmail.com>
+homepage: https://github.com/mikechambers/resource_cache
+repository: https://github.com/mikechambers/resource_cache
+issue_tracker: https://github.com/mikechambers/resource_cache/issues
+dependencies:
+  crypto: ^2.0.6
+environment:
+  sdk: '>=2.0.0 <3.0.0'
