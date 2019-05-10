@@ -1,6 +1,6 @@
 # resource_cache
 
-resource_cache is a Dart library for retrieving, caching and managing remote HTTP resources. The library makes it simple to cache remote files localy, and is particularly useful for loading and displaying images retrieved from the web.
+resource_cache is a Dart library for retrieving, caching and managing remote HTTP resources.
 
 ## Usage
 

@@ -74,7 +74,7 @@ class ResourceCache {
         if(response.statusCode == 200) {
           var bytes = List<int>();
           await response.forEach((d) => bytes.addAll(d));
-          file.writeAsBytes(bytes);
+          await file.writeAsBytes(bytes);
 
           uri = file.uri;
         }
