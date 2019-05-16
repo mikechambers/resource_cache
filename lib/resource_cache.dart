@@ -54,17 +54,14 @@ class ResourceCache {
   ///If the resource already exists in the cache, a URI pointing to it will be returned.
   ///If any errors occur while retrieving the remote resource, or caching it, a URI pointing
   ///to the original URL will be returned.
-  Future<Uri> retrieve(String url) async {
+  Future<File> retrieve(String url) async {
     String key = _generateKeyHash(url);
     File file = await _getItemFile(key);
 
-    Uri uri;
-    if(await file.exists()) {
-      //download file
-      uri = file.uri;
-    } else {
+    bool exists = await file.exists();
 
-      uri = Uri.parse(url);
+    if(!exists) {
+      Uri uri = Uri.parse(url);
       try {
         HttpClient client = new HttpClient();
         var request = await client.getUrl(uri);
@@ -75,8 +72,6 @@ class ResourceCache {
           var bytes = List<int>();
           await response.forEach((d) => bytes.addAll(d));
           await file.writeAsBytes(bytes);
-
-          uri = file.uri;
         }
 
       } catch(error) {
@@ -85,6 +80,6 @@ class ResourceCache {
       }
     }
 
-    return uri;
+    return file;
   }
 }
