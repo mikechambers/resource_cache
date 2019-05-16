@@ -15,8 +15,8 @@ void main() async {
   //This returns a Uri. It will be a file:/ uri if the file was already cached, or
   //succesfully cached.
   //It the original Uri if there was an error, or the file could not be cached.
-  var uri = await cache.retrieve(url);
+  File f = await cache.retrieve(url);
 
-  print(uri);
+  print(f.path);
   exit(0);
 }

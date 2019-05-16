@@ -19,12 +19,10 @@ void main() async {
   //Url to retrieve
   var url = "http://mikechambers.com/blog/images/posts/twitchlivefirefox/screenshot.png";
 
-  //This returns a Uri. It will be a file:/ uri if the file was already cached, or
-  //succesfully cached.
-  //It the original Uri if there was an error, or the file could not be cached.
-  var uri = await cache.retrieve(url);
+  //This returns a file referencing a cached local copy of the remote resource.
+  File f  = await cache.retrieve(url);
 
-  print(uri);
+  print(f.path);
 }
 ```
 
